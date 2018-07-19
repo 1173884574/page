@@ -1,0 +1,30 @@
+<block wx:for-items="{{films_sc}}" wx:for-item="film_sc">
+<block wx:if="{{film_sc.title}}">
+      <view class="film-item" style='height:120px'>
+        <view class="film-image" >
+          <image src="{{film_sc.cover}}"></image>
+        </view>
+        <view class="film-info">
+          <view>
+            <text class="film-title">{{film_sc.title}}</text>
+          </view>
+        </view>
+      </view>
+      <button bindtap="blinkout" data-title="{{film_sc.title}}" style="width:90px;height:36px;" class="sc">
+取消收藏</button>
+      </block>
+      <block wx:else>
+      </block>
+    </block>
+    <view class="load-more-wrap">
+      <block wx:if="{{hasMore}}">
+        <view class="load-content">
+          <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="load-content">
+          <text>没有更多内容了</text>
+        </view>
+      </block>
+    </view>

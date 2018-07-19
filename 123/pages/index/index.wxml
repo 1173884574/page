@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+<view class="c+b">
+<image class="title-image" src="/images/title.png"></image>
+<image class="cover-image" src="/images/cover.jpg"></image>
+<button bindtap="clickMe" class="usermotto">{{motto}}</button>
+<button bindtap="clickyou" class="usersc">收藏列表</button>
+</view>
+</view>
+

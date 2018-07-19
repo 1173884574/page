@@ -1,0 +1,16 @@
+/* pages/detail/detail.wxss */
+.film-title{
+font-size: 20px;
+font-family: KaiTi;
+}
+.sc{
+font-size: 15px;
+top: 20px;
+left: -50px; 
+background-color: skyblue;
+color: white;
+}
+.jianjie{
+  font-size:15px;
+  font-family: KaiTi;
+}

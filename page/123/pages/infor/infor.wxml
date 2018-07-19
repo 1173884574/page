@@ -1,0 +1,64 @@
+  <view class='page_row' >
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="ss"  placeholder="请输入关键字" bindinput="voteTitle" value="{{searchValue}}"/>
+      </view>
+    </view>
+    <button bindtap="setSearchStorage" class='sousuo'>搜索</button>
+  </view>
+<block wx:for-items="{{films}}" wx:for-item="film">
+      <view class="film-item" style='height:90px'>
+        <view class="film-image">
+          <image src="{{film.cover}}"></image>
+        </view>
+        <view class="film-info">
+          <view>
+            <text class="film-title">{{film.title}}</text>
+          </view>
+          <view wx:if="{{film.day==1}}">
+            <text>每周一更新</text>
+          </view>
+          <view wx:elif="{{film.day==2}}">
+            <text>每周二更新</text>
+          </view>
+          <view wx:elif="{{film.day==3}}">
+            <text>每周三更新</text>
+          </view>
+          <view wx:elif="{{film.day==4}}">
+            <text>每周四更新</text>
+          </view>
+          <view wx:elif="{{film.day==5}}">
+            <text>每周五更新</text>
+          </view>
+          <view wx:elif="{{film.day==6}}">
+            <text>每周六更新</text>
+          </view>
+          <view wx:elif="{{film.day==7}}">
+            <text>每周日更新</text>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{film.scxx==false}}">
+      <button bindtap="blinkin" data-num="{{film.num}}" data-day="{{film.day}}" data-id="{{film.id}}" data-title="{{film.title}}" data-cover="{{film.cover}}" data-scxx="{{film.scxx}}" data-detail="{{film.detail}}" data-goal="{{film.goal}}" style="width:76px;height:36px;" class="sc">
+收藏</button>
+</view>
+<view wx:elif="{{film.scxx==true}}">
+      <button style="width:76px;height:36px;" class="sc">
+已收藏</button>
+</view>
+      <button bindtap="viewDetail" data-num="{{film.num}}" data-day="{{film.day}}" data-id="{{film.id}}" data-title="{{film.title}}" data-cover="{{film.cover}}" data-scxx="{{film.scxx}}" data-detail="{{film.detail}}" data-goal="{{film.goal}}" type="button" class="btn" style="width:76px;height:36px;">{{bu}}
+      </button>
+    </block>
+    <view class="load-more-wrap">
+      <block wx:if="{{hasMore}}">
+        <view class="load-content">
+          <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="load-content">
+          <text>没有更多内容了</text>
+        </view>
+      </block>
+    </view>

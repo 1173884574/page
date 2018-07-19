@@ -1,0 +1,11 @@
+/* pages/sc/sc.wxss */
+.sc{
+font-size: 15px;
+top: -10px;
+left: 25px; 
+background-color: skyblue;
+color: white;
+}
+.film-info{
+font-family: kaiti;
+}
